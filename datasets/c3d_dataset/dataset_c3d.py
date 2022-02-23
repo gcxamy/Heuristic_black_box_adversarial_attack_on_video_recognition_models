@@ -21,7 +21,7 @@ class DictToAttr(object):
 def get_test_set(dataset):
     assert dataset in ['ucf101', 'hmdb51']
     if dataset == 'hmdb51':
-        with open('/home/jingjing/zhipeng/adv-attack-video/code2/datasets/c3d_dataset/hmdb51_params.pkl', 'rb') as ipt:
+        with open('/home/jingjing/zhipeng/adv-attack-video/code2/datasets/c3d_dataset/hmdb51_params.pkl', 'rb') as ipt:#找文件是否提供，是参数还是其他的
             opt = pickle.load(ipt)
         opt = DictToAttr(opt)
     elif dataset == 'ucf101':
