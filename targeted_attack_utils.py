@@ -130,7 +130,7 @@ class targeted_Attack_base(object):
         
         # [seq_len, height, width, num_channels]
         if self.model_name == 'c3d':
-            MASKs = torch.stack(MASKs).permute(3,0,1,2).cuda()
+            MASKs = torch.stack(MASKs).permute(3,0,1,2).cuda()#[num_channels,seq_len,height,width],seq_len代表帧
         elif self.model_name == 'lrcn':
             MASKs = torch.stack(MASKs).cuda()
         elif self.model_name == 'flownet':
